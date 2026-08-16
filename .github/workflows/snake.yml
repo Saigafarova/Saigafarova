@@ -16,7 +16,7 @@ jobs:
       - name: Генерируем змейку
         uses: Platane/snk@v3
         with:
-          github_user_name: твой-ник
+          github_user_name: Saigafarova
           outputs: |
             dist/snake.svg
             dist/snake-dark.svg?palette=github-dark

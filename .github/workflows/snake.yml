@@ -2,7 +2,7 @@ name: Генерация змейки
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # каждый день в полночь
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -11,18 +11,18 @@ jobs:
 
     steps:
       - name: Клонируем репозиторий
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4          # 👈 обновил версию
 
       - name: Генерируем змейку
         uses: Platane/snk@v3
         with:
-          github_user_name: Saigafarova
+          github_user_name: Saigafarova    # 👈 СЮДА СВОЙ ЛОГИН!
           outputs: |
             dist/snake.svg
             dist/snake-dark.svg?palette=github-dark
 
       - name: Пушим результат
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v4.0.0   # 👈 обновил версию
         with:
           target_branch: output
           build_dir: dist
